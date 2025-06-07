@@ -639,7 +639,7 @@ footer#contact .content-wrapper {
     margin-bottom: 20px;
   }
   .contact-item {
-    font-size: 1.05em;
+    font-size: 1em;
   }
   .social-icons {
     gap: 20px;
@@ -649,7 +649,7 @@ footer#contact .content-wrapper {
     font-size: 2.5em;
   }
   .copyright-text {
-    font-size: 0.9em;
+    font-size: 0.85em;
   }
 }
 
