@@ -1,21 +1,21 @@
 /* --- Color Palette Definitions (for easy reference and consistency) --- */
 :root {
-    --color-accent-blue: #0066cc; /* Adjusted for better contrast with white text (was #007bff) */
-    --color-accent-blue-dark: #004b99; /* Adjusted to be darker for hover state (was #0056b3) */
+    /* Adjusted for better contrast with white text - Now meets AA for normal text */
+    --color-accent-blue: #005aa3;
+    --color-accent-blue-dark: #004b99;
     --color-charcoal-gray: #343a40;
-    --color-dark-text: #333; /* Good for general dark text on light backgrounds */
-    --color-medium-text: #333333; /* Adjusted for better contrast, now same as dark text for stronger contrast. */
-    --color-light-gray: #f8f8f8; /* Kept for background use */
+    --color-dark-text: #333;
+    --color-light-gray: #f8f8f8;
     --color-lighter-gray: #e0e0e0;
     --color-white: #ffffff;
     --color-black: #000;
     --color-overall-background-gray: #e8e8e8;
-    /* NEW/UPDATED: For copyright text, using a value that ensures better contrast on charcoal-gray */
-    --color-copyright-text: #cccccc; /* Improved contrast for text on charcoal-gray */
+    /* NEW/UPDATED: For copyright text, ensures AA contrast on charcoal-gray */
+    --color-copyright-text: #bbbbbb;
 
     /* New variable for consistent border-radius */
     --border-radius-primary: 12px;
-    --border-radius-secondary: 8px; /* For smaller elements like skills/tools */
+    --border-radius-secondary: 8px;
 }
 
 /* Reset & Base Styles */
@@ -39,11 +39,8 @@ html {
 
 body {
     font-family: 'Roboto', sans-serif;
-    color: var(--color-dark-text); /* Generally uses dark text */
+    color: var(--color-dark-text);
     background-color: var(--color-overall-background-gray);
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
 }
 
 /* Overlay for visual effect (if applicable - often used with background images) */
@@ -122,11 +119,15 @@ nav a {
 }
 
 nav a:hover,
-nav a:active {
-    background-color: var(--color-accent-blue); /* Lighter blue on hover */
+nav a:active,
+nav a:focus { /* ADDED :focus for keyboard navigation */
+    background-color: var(--color-accent-blue); /* Lighter blue on hover/focus */
     color: var(--color-white);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     transform: translateY(-2px);
+    /* Explicit outline for strong focus visibility, without changing layout */
+    outline: 2px solid var(--color-white);
+    outline-offset: 2px; /* Adds space between outline and button */
 }
 
 /* --- Home Section Title (Now part of the Header's content-wrapper) --- */
@@ -179,10 +180,14 @@ nav a:active {
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.hire-me-button:hover {
+.hire-me-button:hover,
+.hire-me-button:focus { /* ADDED :focus for keyboard navigation */
     background-color: var(--color-charcoal-gray);
     transform: translateY(-3px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    /* Explicit outline for strong focus visibility */
+    outline: 2px solid var(--color-accent-blue); /* A clear outline */
+    outline-offset: 2px; /* Adds space between outline and button */
 }
 
 
@@ -244,7 +249,7 @@ nav a:active {
 .home-portfolio-piece p {
     padding: 0 25px 22px;
     font-size: 1.15em;
-    color: var(--color-medium-text);
+    color: var(--color-dark-text);
     background-color: var(--color-light-gray);
     flex-grow: 1;
     transition: background-color 0.3s ease;
@@ -260,13 +265,13 @@ nav a:active {
     color: var(--color-dark-text);
 }
 
-/* FIX: Project Live Link Contrast & Redundancy - Corrected for accessibility */
+/* Project Live Link */
 .project-link {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px 25px;
-    background-color: var(--color-accent-blue); /* This will now use the new, darker blue */
+    background-color: var(--color-accent-blue);
     color: var(--color-white);
     border-bottom-left-radius: var(--border-radius-primary);
     border-bottom-right-radius: var(--border-radius-primary);
@@ -278,16 +283,20 @@ nav a:active {
     margin-top: auto;
 }
 
-.project-link:hover {
-    background-color: var(--color-accent-blue-dark); /* This will now use the new, even darker blue */
+.project-link:hover,
+.project-link:focus { /* ADDED :focus for keyboard navigation */
+    background-color: var(--color-accent-blue-dark);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     transform: translateY(-2px);
+    /* Explicit outline for strong focus visibility */
+    outline: 2px solid var(--color-white);
+    outline-offset: 2px;
 }
 
 /* If you have an icon inside project-link (e.g., <i class="fa fa-external-link"></i>) */
 .project-link i {
-    margin-right: 8px; /* Space between icon and text */
-    font-size: 1.1em; /* Adjust icon size if needed */
+    margin-right: 8px;
+    font-size: 1.1em;
 }
 
 
@@ -334,11 +343,16 @@ nav a:active {
 }
 
 .skill:hover,
-.tool:hover {
+.tool:hover,
+.skill:focus, /* ADDED :focus for keyboard navigation */
+.tool:focus { /* ADDED :focus for keyboard navigation */
     transform: scale(1.07);
     background-color: var(--color-accent-blue);
     color: var(--color-white);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Explicit outline for strong focus visibility */
+    outline: 2px solid var(--color-white);
+    outline-offset: 2px;
 }
 
 /* --- About/Profile Section --- */
@@ -351,11 +365,11 @@ nav a:active {
 
 /* CSS to replace <br> tags in HTML */
 #about .profile-text p {
-    margin-bottom: 1.2em; /* Adjust spacing as needed */
+    margin-bottom: 1.2em;
 }
 
 #about .profile-text p:last-of-type {
-    margin-bottom: 0; /* Remove margin from the last paragraph */
+    margin-bottom: 0;
 }
 
 
@@ -429,14 +443,14 @@ footer#contact .content-wrapper {
 
 .contact-heading {
     font-size: 1.8em;
-    color: var(--color-dark-text); /* Ensured this matches your preference for dark text */
+    color: var(--color-dark-text);
     margin-bottom: 25px;
     font-weight: 700;
 }
 
 .contact-item {
     font-size: 1.15em;
-    color: var(--color-dark-text); /* Changed to dark-text for better contrast on white background */
+    color: var(--color-dark-text);
     margin-bottom: 12px;
 }
 
@@ -444,20 +458,25 @@ footer#contact .content-wrapper {
     margin-bottom: 0;
 }
 
-/* FIX: Ensure Contrast for Phone/Email Links */
+/* Ensure Contrast for Phone/Email Links */
 .contact-item a {
-    color: var(--color-accent-blue-dark); /* Using darker blue for better contrast on white */
+    color: var(--color-accent-blue-dark);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.contact-item a:hover {
-    color: var(--color-accent-blue); /* Lighter blue on hover for visual feedback */
+.contact-item a:hover,
+.contact-item a:focus { /* ADDED :focus for keyboard navigation */
+    color: var(--color-accent-blue);
     text-decoration: underline;
+    /* Explicit outline for strong focus visibility */
+    outline: 2px dashed var(--color-accent-blue); /* A dashed outline for variety */
+    outline-offset: 4px; /* More offset for clarity */
 }
 
-.contact-item i { /* Assuming 'i' tag for icons like 📞 and ✉️ */
-    margin-right: 8px; /* Space between icon and text */
+.contact-item i {
+    margin-right: 8px;
+    font-size: 1.1em;
 }
 
 
@@ -480,15 +499,20 @@ footer#contact .content-wrapper {
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.social-icons a:hover {
+.social-icons a:hover,
+.social-icons a:focus { /* ADDED :focus for keyboard navigation */
     color: var(--color-accent-blue);
     transform: scale(1.2);
+    /* Explicit outline for strong focus visibility */
+    outline: 2px solid var(--color-accent-blue); /* Outline matching accent color */
+    outline-offset: 2px;
+    border-radius: var(--border-radius-secondary); /* Match general rounding if desired */
 }
 
 .copyright-text {
     margin-top: 30px;
     font-size: 1em;
-    color: var(--color-copyright-text); /* Using the new variable for improved contrast */
+    color: var(--color-copyright-text);
 }
 
 /* --- Responsive Adjustments --- */
@@ -539,7 +563,7 @@ footer#contact .content-wrapper {
         gap: 3%;
     }
     .home-portfolio-piece {
-        max-width: 31%; /* Allows three items per row (approx. 33.33% - gap) */
+        max-width: 31%;
     }
     .home-portfolio-piece img {
         height: 200px;
