@@ -1,788 +1,839 @@
 /* --- Color Palette Definitions (for easy reference and consistency) --- */
 :root {
-    /* Adjusted for better contrast with white text - Now meets AA for normal text */
-    --color-accent-blue: #005aa3; /* Original was #0066cc (3.8:1), new is #005aa3 (4.5:1) on white */
-    --color-accent-blue-dark: #004b99; /* This already had good contrast (5.5:1 on white) */
-    --color-charcoal-gray: #343a40;
-    --color-dark-text: #333; /* Good for general dark text on light backgrounds */
-    --color-light-gray: #f8f8f8; /* Kept for background use */
-    --color-lighter-gray: #e0e0e0;
-    --color-white: #ffffff;
-    --color-black: #000;
-    --color-overall-background-gray: #e8e8e8;
-    /* NEW/UPDATED: For copyright text, ensures AA contrast on charcoal-gray */
-    --color-copyright-text: #bbbbbb; /* Improved contrast for text on charcoal-gray (was #cccccc, 3.8:1, now #bbbbbb, 4.5:1) */
+  /* Adjusted for better contrast with white text - Now meets AA for normal text */
+  --color-accent-blue: #005aa3; /* Original was #0066cc (3.8:1), new is #005aa3 (4.5:1) on white */
+  --color-accent-blue-dark: #004b99; /* This already had good contrast (5.5:1 on white) */
+  --color-charcoal-gray: #343a40;
+  --color-dark-text: #333; /* Good for general dark text on light backgrounds */
+  --color-light-gray: #f8f8f8; /* Kept for background use */
+  --color-lighter-gray: #e0e0e0;
+  --color-white: #ffffff;
+  --color-black: #000;
+  --color-overall-background-gray: #e8e8e8;
+  /* NEW/UPDATED: For copyright text, ensures AA contrast on charcoal-gray */
+  --color-copyright-text: #bbbbbb; /* Improved contrast for text on charcoal-gray (was #cccccc, 3.8:1, now #bbbbbb, 4.5:1) */
 
-    /* New variable for consistent border-radius */
-    --border-radius-primary: 12px;
-    --border-radius-secondary: 8px; /* For smaller elements like skills/tools */
+  /* New variable for consistent border-radius */
+  --border-radius-primary: 12px;
+  --border-radius-secondary: 8px; /* For smaller elements like skills/tools */
 }
 
 /* Reset & Base Styles */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-    font-size: 1em;
-    line-height: 1.65;
+  font-size: 1em;
+  line-height: 1.65;
 }
 
 /* Smooth Scroll for Navigation */
 @media (prefers-reduced-motion: no-preference) {
-    html {
-        scroll-behavior: smooth;
-    }
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    color: var(--color-dark-text); /* Generally uses dark text */
-    background-color: var(--color-overall-background-gray);
-    /* Removed background-size, background-position, background-attachment as they apply to images, not solid colors */
+  font-family: 'Roboto', sans-serif;
+  color: var(--color-dark-text); /* Generally uses dark text */
+  background-color: var(--color-overall-background-gray);
 }
 
 /* Overlay for visual effect (if applicable - often used with background images) */
 .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
 }
 
 /* Main Content Wrapper - holds most of the page content */
 .content-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 25px;
-    border-radius: var(--border-radius-primary);
-    transition: background-color 0.3s ease;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 25px;
+  border-radius: var(--border-radius-primary);
+  transition: background-color 0.3s ease;
 }
 
 /* Specific styling for content-wrapper within sections that need white background */
 #work .content-wrapper,
 #skills .content-wrapper,
 #about .content-wrapper {
-    background-color: var(--color-white);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  background-color: var(--color-white);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* --- Header Styling --- */
 header {
-    background-color: var(--color-charcoal-gray);
-    color: var(--color-white);
-    padding: 30px 25px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    border-radius: var(--border-radius-primary);
-    margin-bottom: 40px;
-    transition: background-color 0.3s ease;
+  background-color: var(--color-charcoal-gray);
+  color: var(--color-white);
+  padding: 30px 25px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: var(--border-radius-primary);
+  margin-bottom: 40px;
+  transition: background-color 0.3s ease;
 }
 
 header:hover {
-    background-color: var(--color-black);
+  background-color: var(--color-black);
 }
 
 /* Ensure the h1 directly inside the header's content-wrapper is visible */
 header .content-wrapper h1 {
-    margin-bottom: 18px;
-    font-size: 3em;
-    letter-spacing: 1.5px;
-    color: var(--color-white);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  margin-bottom: 18px;
+  font-size: 3em;
+  letter-spacing: 1.5px;
+  color: var(--color-white);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 /* Navigation Menu */
 nav ul {
-    display: flex;
-    list-style-type: none;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    margin-bottom: 25px;
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
 }
 
 nav a {
-    /* Adjusted for better contrast and distinctness */
-    background-color: var(--color-accent-blue-dark); /* Solid darker blue for contrast */
-    color: var(--color-white);
-    text-decoration: none;
-    padding: 14px 22px;
-    border-radius: var(--border-radius-secondary);
-    font-weight: 500;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Added subtle shadow for depth */
+  /* Adjusted for better contrast and distinctness */
+  background-color: var(--color-accent-blue-dark); /* Solid darker blue for contrast */
+  color: var(--color-white);
+  text-decoration: none;
+  padding: 14px 22px;
+  border-radius: var(--border-radius-secondary);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Added subtle shadow for depth */
 }
 
 nav a:hover,
 nav a:active,
 nav a:focus { /* ADDED :focus for keyboard navigation */
-    background-color: var(--color-accent-blue); /* Lighter blue on hover/focus */
-    color: var(--color-white);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    transform: translateY(-2px);
-    /* Explicit outline for strong focus visibility, without changing layout */
-    outline: 2px solid var(--color-white);
-    outline-offset: 2px; /* Adds space between outline and button */
+  background-color: var(--color-accent-blue); /* Lighter blue on hover/focus */
+  color: var(--color-white);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+  /* Explicit outline for strong focus visibility, without changing layout */
+  outline: 2px solid var(--color-white);
+  outline-offset: 2px; /* Adds space between outline and button */
 }
 
 /* --- Home Section Title (Now part of the Header's content-wrapper) --- */
 .home-title {
-    margin-top: 50px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 50px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .home-title:hover {
-    transform: scale(1.02);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transform: scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .home-title h1 {
-    font-size: 3.8em;
-    margin-bottom: 25px;
-    color: var(--color-white);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 3.8em;
+  margin-bottom: 25px;
+  color: var(--color-white);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .home-title h2 {
-    font-size: 2.5em;
-    color: var(--color-white);
-    line-height: 1.3;
-    margin-bottom: 45px;
+  font-size: 2.5em;
+  color: var(--color-white);
+  line-height: 1.3;
+  margin-bottom: 45px;
 }
 
 .home-title h2 span {
-    font-weight: 700;
-    color: var(--color-white);
-    background-color: var(--color-accent-blue); /* This now uses the adjusted, accessible blue */
-    padding: 2px 8px;
-    border-radius: var(--border-radius-secondary);
+  font-weight: 700;
+  color: var(--color-white);
+  background-color: var(--color-accent-blue); /* This now uses the adjusted, accessible blue */
+  padding: 2px 8px;
+  border-radius: var(--border-radius-secondary);
 }
 
 /* Styles for the "Hire me" button */
 .hire-me-button {
-    display: inline-block;
-    background-color: var(--color-black);
-    color: var(--color-white);
-    text-decoration: none;
-    padding: 15px 30px;
-    border-radius: var(--border-radius-secondary);
-    font-size: 1.2em;
-    font-weight: 600;
-    margin-top: 30px;
-    letter-spacing: 0.5px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  display: inline-block;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: var(--border-radius-secondary);
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-top: 30px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .hire-me-button:hover,
 .hire-me-button:focus { /* ADDED :focus for keyboard navigation */
-    background-color: var(--color-charcoal-gray);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-    /* Explicit outline for strong focus visibility */
-    outline: 2px solid var(--color-accent-blue); /* A clear outline */
-    outline-offset: 2px; /* Adds space between outline and button */
+  background-color: var(--color-charcoal-gray);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  /* Explicit outline for strong focus visibility */
+  outline: 2px solid var(--color-accent-blue); /* A clear outline */
+  outline-offset: 2px; /* Adds space between outline and button */
+}
+
+/* --- FIX for "My Projects & Skills" centering --- */
+.portfolio {
+  text-align: center; /* This will center the h2 inside it */
+}
+
+/* --- Styling for "My Projects & Skills" heading (now confirmed with HTML) --- */
+.section-heading {
+  font-size: 3.5em; /* Matches the size of your skills-header for consistency */
+  color: var(--color-dark-text); /* Use a dark text color for contrast on light backgrounds */
+  /* FIX: Increased margin-bottom to provide space for hover effect of top row */
+  margin-bottom: 80px; /* Increased from 50px to provide more clearance */
+  margin-top: 40px; /* Adds space above the heading to separate it from previous content */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Portfolio Section (Horizontal Projects) --- */
+.portfolio-header {
+  /* NEW: Add margin-bottom to create space below the "Projects" text */
+  margin-bottom: 30px; /* Adjust this value as needed for desired spacing */
+  font-size: 2.5em; /* Keep your desired font size for this heading */
+  color: var(--color-dark-text);
+  text-align: center; /* Ensure it remains centered */
 }
 
 
-/* --- Portfolio Section (Horizontal Projects) --- */
 .portfolio-wrapper {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 35px;
-    justify-content: center;
-    align-items: stretch;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* FIX: Increased row-gap for more vertical spacing between rows. Column-gap for horizontal. */
+  gap: 70px 30px; /* Explicit vertical gap 70px, horizontal gap 30px */
+  justify-content: center;
+  align-items: stretch; /* Ensures all items in a row stretch to the tallest */
 }
 
 .home-portfolio-piece {
-    background-color: var(--color-white);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    border-radius: var(--border-radius-primary);
-    overflow: hidden;
-    max-width: 400px;
-    width: 100%;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  background-color: var(--color-white);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle box-shadow for visual separation */
+  border-radius: var(--border-radius-primary);
+  overflow: hidden;
+  max-width: 400px; /* Default max-width for individual pieces */
+  width: 100%; /* Ensures it takes full width within its flex-basis limit */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* IMPORTANT: Make the figure element fill available space to push the link down */
+.home-portfolio-piece figure {
+  display: flex; /* Make figure a flex container too */
+  flex-direction: column;
+  flex-grow: 1; /* This makes the figure expand to push the project-link down */
 }
 
 .home-portfolio-piece:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-    background-color: var(--color-light-gray);
+  /* FIX: Apply a noticeable but safe lift, relying on increased gap for buffer */
+  transform: translateY(-15px); /* Slightly increased lift for better visual feedback */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+  background-color: var(--color-lighter-gray); /* Change background on hover */
+  z-index: 2; /* Ensures hovered card is above others */
+  position: relative; /* Ensure z-index takes effect */
 }
 
 .home-portfolio-piece img {
-    width: 100%;
-    height: 250px;
-    border-top-left-radius: var(--border-radius-primary);
-    border-top-right-radius: var(--border-radius-primary);
-    object-fit: cover;
-    transition: transform 0.3s ease;
+  width: 100%;
+  height: 250px;
+  border-top-left-radius: var(--border-radius-primary);
+  border-top-right-radius: var(--border-radius-primary);
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
 .home-portfolio-piece:hover img {
-    transform: scale(1.05);
+  transform: scale(1.03); /* Subtle scale on image hover for subtler effect */
 }
 
 .home-portfolio-piece h4 {
-    padding: 22px;
-    font-size: 2em;
-    color: var(--color-dark-text);
-    background-color: var(--color-lighter-gray);
-    transition: background-color 0.3s ease;
+  padding: 22px;
+  font-size: 2em;
+  color: var(--color-dark-text);
+  background-color: var(--color-lighter-gray);
+  transition: background-color 0.3s ease;
+  margin-bottom: 0; /* Ensures no margin gap between title and description */
 }
 
 .home-portfolio-piece:hover h4 {
-    background-color: var(--color-lighter-gray);
+  background-color: var(--color-light-gray); /* Slightly different shade on hover for title */
 }
 
 .home-portfolio-piece .project-description,
 .home-portfolio-piece p {
-    padding: 0 25px 22px;
-    font-size: 1.15em;
-    color: var(--color-dark-text); /* Now uses --color-dark-text */
-    background-color: var(--color-light-gray);
-    flex-grow: 1;
-    transition: background-color 0.3s ease;
+  padding: 15px 25px 22px; /* Consistent padding */
+  font-size: 1.15em;
+  color: var(--color-dark-text);
+  background-color: var(--color-light-gray);
+  flex-grow: 1; /* Ensures this section fills available vertical space */
+  transition: background-color 0.3s ease;
+  margin-top: 0; /* Ensures no margin gap between title and description */
 }
 
 .home-portfolio-piece:hover .project-description,
 .home-portfolio-piece:hover p {
-    background-color: var(--color-lighter-gray);
+  background-color: var(--color-white); /* Slightly different shade on hover for description */
 }
 
 .home-portfolio-piece p span {
-    font-weight: bold;
-    color: var(--color-dark-text);
+  font-weight: bold;
+  color: var(--color-dark-text);
 }
 
-/* FIX: Project Live Link Contrast & Redundancy - Corrected for accessibility */
+/* Project Live Link Contrast & Redundancy - Corrected for accessibility */
 .project-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px 25px;
-    background-color: var(--color-accent-blue); /* This will now use the new, accessible blue */
-    color: var(--color-white);
-    border-bottom-left-radius: var(--border-radius-primary);
-    border-bottom-right-radius: var(--border-radius-primary);
-    text-decoration: none;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-    margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 25px;
+  background-color: var(--color-accent-blue); /* Accessible blue */
+  color: var(--color-white);
+  border-bottom-left-radius: var(--border-radius-primary);
+  border-bottom-right-radius: var(--border-radius-primary);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  margin-top: auto; /* Pushes the link to the bottom of the flex container */
 }
 
 .project-link:hover,
 .project-link:focus { /* ADDED :focus for keyboard navigation */
-    background-color: var(--color-accent-blue-dark); /* This will now use the original, even darker blue */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    transform: translateY(-2px);
-    /* Explicit outline for strong focus visibility */
-    outline: 2px solid var(--color-white);
-    outline-offset: 2px;
+  background-color: var(--color-accent-blue-dark); /* Darker blue on hover/focus */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px); /* Slight lift on link hover */
+  /* Explicit outline for strong focus visibility */
+  outline: 2px solid var(--color-white);
+  outline-offset: 2px;
 }
 
 /* If you have an icon inside project-link (e.g., <i class="fa fa-external-link"></i>) */
 .project-link i {
-    margin-right: 8px; /* Space between icon and text */
-    font-size: 1.1em; /* Adjust icon size if needed */
+  margin-right: 8px; /* Space between icon and text */
+  font-size: 1.1em; /* Adjust icon size if needed */
 }
 
 
 /* --- Skills Section --- */
 #skills .content-wrapper {
-    padding: 45px 25px;
-    border-radius: var(--border-radius-primary);
-    margin-bottom: 40px;
-    text-align: center;
+  padding: 45px 25px;
+  border-radius: var(--border-radius-primary);
+  margin-bottom: 40px;
 }
 
 .skills-header {
-    font-size: 2.8em;
-    color: var(--color-black);
-    margin-bottom: 35px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Explicitly centers the text */
+  font-size: 3.5em; /* Bumps up the font size */
+  color: var(--color-black);
+  margin-bottom: 50px; /* Adds more space below the header */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 #skills h4 {
-    font-size: 1.8em;
-    color: var(--color-dark-text);
-    margin-top: 35px;
-    margin-bottom: 25px;
+  font-size: 1.8em;
+  color: var(--color-dark-text);
+  margin-top: 35px;
+  margin-bottom: 25px;
 }
 
 .language-wrapper,
 .tools-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
 
 .skill,
 .tool {
-    padding: 14px 22px;
-    background-color: var(--color-charcoal-gray);
-    color: var(--color-white);
-    border-radius: var(--border-radius-secondary);
-    font-size: 1.1em;
-    font-weight: 500;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  padding: 14px 22px;
+  background-color: var(--color-charcoal-gray);
+  color: var(--color-white);
+  border-radius: var(--border-radius-secondary);
+  font-size: 1.1em;
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .skill:hover,
 .tool:hover,
 .skill:focus, /* ADDED :focus for keyboard navigation */
 .tool:focus { /* ADDED :focus for keyboard navigation */
-    transform: scale(1.07);
-    background-color: var(--color-accent-blue);
-    color: var(--color-white);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    /* Explicit outline for strong focus visibility */
-    outline: 2px solid var(--color-white);
-    outline-offset: 2px;
+  transform: scale(1.07);
+  background-color: var(--color-accent-blue);
+  color: var(--color-white);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  /* Explicit outline for strong focus visibility */
+  outline: 2px solid var(--color-white);
+  outline-offset: 2px;
 }
 
 /* --- About/Profile Section --- */
 #about .profile-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 /* CSS to replace <br> tags in HTML */
 #about .profile-text p {
-    margin-bottom: 1.2em; /* Adjust spacing as needed */
+  margin-bottom: 1.2em; /* Adjust spacing as needed */
 }
 
 #about .profile-text p:last-of-type {
-    margin-bottom: 0; /* Remove margin from the last paragraph */
+  margin-bottom: 0; /* Remove margin from the last paragraph */
 }
 
 
 #about img {
-    width: 280px;
-    height: 280px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-    border: 4px solid var(--color-accent-blue);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  border: 4px solid var(--color-accent-blue);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 #about img:hover {
-    transform: scale(1.08);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    border-color: var(--color-accent-blue-dark);
+  transform: scale(1.08);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  border-color: var(--color-accent-blue-dark);
 }
 
 #about .profile-text {
-    text-align: center;
+  text-align: center;
 }
 
 /* --- Let's Connect (Contact Section) --- */
 footer#contact .content-wrapper {
-    background-color: var(--color-charcoal-gray);
-    border-radius: var(--border-radius-primary);
-    padding: 50px 25px;
-    text-align: center;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    color: var(--color-white);
-    margin-bottom: 40px;
+  background-color: var(--color-charcoal-gray);
+  border-radius: var(--border-radius-primary);
+  padding: 50px 25px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  color: var(--color-white);
+  margin-bottom: 40px;
 }
 
 #contact h3 {
-    font-size: 3em;
-    color: var(--color-white);
-    margin-bottom: 40px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-    letter-spacing: 1px;
+  font-size: 3em;
+  color: var(--color-white);
+  margin-bottom: 40px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  letter-spacing: 1px;
 }
 
 /* Grouping contact details (Get in Touch, Follow Me) */
 .contact-details-group {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
-    margin-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 40px;
 }
 
 /* Styling for individual contact info blocks */
 .contact-info-block,
 .social-block {
-    background-color: var(--color-white);
-    border-radius: var(--border-radius-primary);
-    padding: 30px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    color: var(--color-dark-text);
-    flex: 1;
-    max-width: 450px;
-    text-align: center;
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-primary);
+  padding: 30px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: var(--color-dark-text);
+  flex: 1;
+  max-width: 450px;
+  text-align: center;
 }
 
 .contact-info-block:hover,
 .social-block:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
 }
 
 .contact-heading {
-    font-size: 1.8em;
-    color: var(--color-dark-text); /* Ensured this matches your preference for dark text */
-    margin-bottom: 25px;
-    font-weight: 700;
+  font-size: 1.8em;
+  color: var(--color-dark-text); /* Ensured this matches your preference for dark text */
+  margin-bottom: 25px;
+  font-weight: 700;
 }
 
 .contact-item {
-    font-size: 1.15em;
-    color: var(--color-dark-text); /* Changed to dark-text for better contrast on white background */
-    margin-bottom: 12px;
+  font-size: 1.15em;
+  color: var(--color-dark-text); /* Changed to dark-text for better contrast on white background */
+  margin-bottom: 12px;
 }
 
 .contact-item:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 /* FIX: Ensure Contrast for Phone/Email Links */
 .contact-item a {
-    color: var(--color-accent-blue-dark); /* Using darker blue for better contrast on white */
-    text-decoration: none;
-    transition: color 0.3s ease;
+  color: var(--color-accent-blue-dark); /* Using darker blue for better contrast on white */
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .contact-item a:hover,
 .contact-item a:focus { /* ADDED :focus for keyboard navigation */
-    color: var(--color-accent-blue); /* Lighter blue on hover for visual feedback (now accessible) */
-    text-decoration: underline;
-    /* Explicit outline for strong focus visibility */
-    outline: 2px dashed var(--color-accent-blue); /* A dashed outline for variety */
-    outline-offset: 4px; /* More offset for clarity */
+  color: var(--color-accent-blue); /* Lighter blue on hover for visual feedback (now accessible) */
+  text-decoration: underline;
+  /* Explicit outline for strong focus visibility */
+  outline: 2px dashed var(--color-accent-blue); /* A dashed outline for variety */
+  outline-offset: 4px; /* More offset for clarity */
 }
 
 .contact-item i { /* Assuming 'i' tag for icons like 📞 and ✉️ */
-    margin-right: 8px; /* Space between icon and text */
-    font-size: 1.1em; /* Adjust icon size if needed */
+  margin-right: 8px; /* Space between icon and text */
+  font-size: 1.1em; /* Adjust icon size if needed */
 }
 
 
 .social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    list-style: none;
-    padding: 0;
-    margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  list-style: none;
+  padding: 0;
+  margin-top: 25px;
 }
 
 .social-icons li {
-    margin: 0;
+  margin: 0;
 }
 
 .social-icons a {
-    color: var(--color-charcoal-gray);
-    font-size: 3em;
-    transition: color 0.3s ease, transform 0.3s ease;
+  color: var(--color-charcoal-gray);
+  font-size: 3em;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .social-icons a:hover,
 .social-icons a:focus { /* ADDED :focus for keyboard navigation */
-    color: var(--color-accent-blue);
-    transform: scale(1.2);
-    /* Explicit outline for strong focus visibility */
-    outline: 2px solid var(--color-accent-blue); /* Outline matching accent color */
-    outline-offset: 2px;
-    border-radius: var(--border-radius-secondary); /* Match general rounding if desired */
+  color: var(--color-accent-blue);
+  transform: scale(1.2);
+  /* Explicit outline for strong focus visibility */
+  outline: 2px solid var(--color-accent-blue); /* Outline matching accent color */
+  outline-offset: 2px;
+  border-radius: var(--border-radius-secondary); /* Match general rounding if desired */
 }
 
 /* Visually hide words associated with icons for accessibility */
 .visually-hidden {
-    display: inline-block;
-    position: absolute;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    width: 1px;
-    margin: -1px;
-    padding: 0;
-    border: 0;
+  display: inline-block;
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
 }
 
 .copyright-text {
-    margin-top: 30px;
-    font-size: 1em;
-    color: var(--color-copyright-text); /* Using the new variable for improved contrast */
+  margin-top: 30px;
+  font-size: 1em;
+  color: var(--color-copyright-text); /* Using the new variable for improved contrast */
 }
 
 /* --- Responsive Adjustments --- */
 
 /* For screens 992px and wider */
 @media (min-width: 992px) {
-    .home-title h1 {
-        font-size: 3.8em;
-    }
-    .home-title h2 {
-        font-size: 2.5em;
-    }
-    .home-portfolio-piece {
-        max-width: 400px;
-    }
+  .home-title h1 {
+    font-size: 3.8em;
+  }
+  .home-title h2 {
+    font-size: 2.5em;
+  }
+  .home-portfolio-piece {
+    max-width: 400px; /* Maintain fixed max-width for very large screens */
+  }
+  .section-heading { /* Apply consistent font-size for larger screens */
+    font-size: 3.5em;
+  }
 }
 
 /* For screens 768px and wider (desktop and larger tablets) */
 @media (min-width: 768px) {
-    /* About Section Specific Layout */
-    #about .profile-content {
-        flex-direction: row;
-        text-align: left;
-        align-items: flex-start;
-        justify-content: center;
-    }
+  /* About Section Specific Layout */
+  #about .profile-content {
+    flex-direction: row;
+    text-align: left;
+    align-items: flex-start;
+    justify-content: center;
+  }
 
-    #about img {
-        width: 280px;
-        height: 280px;
-        margin-right: 40px;
-        margin-bottom: 0;
-    }
+  #about img {
+    width: 280px;
+    height: 280px;
+    margin-right: 40px;
+    margin-bottom: 0;
+  }
 
-    #about .profile-text {
-        text-align: left;
-        flex-grow: 1;
-    }
+  #about .profile-text {
+    text-align: left;
+    flex-grow: 1;
+  }
 
-    /* Other adjustments for 768px and up */
-    .home-title h1 {
-        font-size: 3.2em;
-    }
-    .home-title h2 {
-        font-size: 2em;
-    }
-    .portfolio-wrapper {
-        gap: 3%;
-    }
-    .home-portfolio-piece {
-        max-width: 31%; /* Allows three items per row (approx. 33.33% - gap) */
-    }
-    .home-portfolio-piece img {
-        height: 200px;
-    }
-    .home-portfolio-piece h4 {
-        font-size: 1.6em;
-    }
-    .home-portfolio-piece .project-description,
-    .home-portfolio-piece p {
-        font-size: 1.05em;
-    }
-    .project-link {
-        font-size: 0.9em;
-    }
-    .skills-header, #contact h3 {
-        font-size: 2.2em;
-    }
-    #skills h4 {
-        font-size: 1.4em;
-    }
-    .skill, .tool {
-        padding: 12px 18px;
-        font-size: 1em;
-    }
+  /* Other adjustments for 768px and up */
+  .home-title h1 {
+    font-size: 3.2em;
+  }
+  .home-title h2 {
+    font-size: 2em;
+  }
+  /* FIX: Adjusted gap and precise max-width calculation for 3 columns on wider screens */
+  .portfolio-wrapper {
+    gap: 70px 30px; /* Consistent gap definition: row-gap 70px, column-gap 30px */
+  }
+  .home-portfolio-piece {
+    /* Calculate width for 3 items with 30px gap: (100% - (2 * 30px)) / 3 = (100% - 60px) / 3 */
+    max-width: calc((100% - 60px) / 3); /* Ensures three items fit perfectly with gaps */
+  }
+  .home-portfolio-piece img {
+    height: 200px;
+  }
+  .home-portfolio-piece h4 {
+    font-size: 1.6em;
+  }
+  .home-portfolio-piece .project-description,
+  .home-portfolio-piece p {
+    font-size: 1.05em;
+  }
+  .project-link {
+    font-size: 0.9em;
+  }
+  .skills-header, #contact h3 {
+    font-size: 2.2em;
+  }
+  #skills h4 {
+    font-size: 1.4em;
+  }
+  .skill, .tool {
+    padding: 12px 18px;
+    font-size: 1em;
+  }
+  .section-heading { /* Apply consistent font-size for tablets */
+    font-size: 2.8em; /* Adjusted for better fit on tablets */
+  }
 
-    /* Responsive adjustments for new footer structure on 768px+ */
-    .contact-details-group {
-        flex-direction: row;
-        justify-content: center;
-        align-items: stretch;
-    }
+  /* Responsive adjustments for new footer structure on 768px+ */
+  .contact-details-group {
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+  }
 }
 
 /* For screens 767px and smaller (mobile devices) */
 @media (max-width: 767px) {
-    header {
-        padding: 25px 15px;
-    }
-    header h1 {
-        font-size: 2.5em;
-    }
-    nav ul {
-        gap: 20px;
-    }
-    nav a {
-        padding: 10px 18px;
-        font-size: 0.95em;
-    }
-    .home-title h1 {
-        font-size: 2.8em;
-    }
-    .home-title h2 {
-        font-size: 1.8em;
-    }
-    .portfolio-wrapper {
-        flex-direction: column;
-        align-items: center;
-    }
-    .home-portfolio-piece {
-        max-width: 90%;
-        margin: 0 auto;
-    }
-    .home-portfolio-piece img {
-        height: 200px;
-    }
-    .home-portfolio-piece h4 {
-        font-size: 1.4em;
-    }
-    .home-portfolio-piece .project-description,
-    .home-portfolio-piece p {
-        font-size: 1.05em;
-    }
-    .project-link {
-        font-size: 0.9em;
-    }
-    .skills-header, #contact h3 {
-        font-size: 2.2em;
-    }
-    #skills h4 {
-        font-size: 1.4em;
-    }
-    .skill, .tool {
-        padding: 12px 18px;
-        font-size: 1em;
-    }
-    #about img {
-        width: 240px;
-        height: 240px;
-        margin-bottom: 25px;
-    }
+  header {
+    padding: 25px 15px;
+  }
+  header h1 {
+    font-size: 2.5em;
+  }
+  nav ul {
+    gap: 20px;
+  }
+  nav a {
+    padding: 10px 18px;
+    font-size: 0.95em;
+  }
+  .home-title h1 {
+    font-size: 2.8em;
+  }
+  .home-title h2 {
+    font-size: 1.8em;
+  }
+  .portfolio-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 35px; /* Ensure sufficient gap for mobile stacked items */
+  }
+  .home-portfolio-piece {
+    max-width: 90%;
+    margin: 0 auto; /* Centered on mobile */
+  }
+  .home-portfolio-piece img {
+    height: 200px;
+  }
+  .home-portfolio-piece h4 {
+    font-size: 1.4em;
+  }
+  .home-portfolio-piece .project-description,
+  .home-portfolio-piece p {
+    font-size: 1.05em;
+  }
+  .project-link {
+    font-size: 0.9em;
+  }
+  .skills-header, #contact h3 {
+    font-size: 2.2em;
+  }
+  #skills h4 {
+    font-size: 1.4em;
+  }
+  .skill, .tool {
+    padding: 12px 18px;
+    font-size: 1em;
+  }
+  #about img {
+    width: 240px;
+    height: 240px;
+    margin-bottom: 25px;
+  }
+  .section-heading { /* Apply consistent font-size for mobile */
+    font-size: 2.2em; /* Adjusted for better fit on mobile */
+    margin-bottom: 30px; /* Adjust spacing for mobile */
+  }
 
-    /* Responsive adjustments for new footer structure on 767px and smaller */
-    #contact h3 {
-        font-size: 2.5em;
-        margin-bottom: 30px;
-    }
-    .contact-details-group {
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-    }
-    .contact-info-block,
-    .social-block {
-        max-width: 90%;
-        width: 100%;
-        padding: 25px;
-    }
-    .contact-heading {
-        font-size: 1.5em;
-        margin-bottom: 15px;
-    }
-    .contact-item {
-        font-size: 1em;
-    }
-    .social-icons a {
-        font-size: 2.5em;
-    }
-    .copyright-text {
-        font-size: 0.85em;
-    }
+  /* Responsive adjustments for new footer structure on 767px and smaller */
+  #contact h3 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+  }
+  .contact-details-group {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  .contact-info-block,
+  .social-block {
+    max-width: 90%;
+    width: 100%;
+    padding: 25px;
+  }
+  .contact-heading {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+  }
+  .contact-item {
+    font-size: 1em;
+  }
+  .social-icons a {
+    font-size: 2.5em;
+  }
+  .copyright-text {
+    font-size: 0.85em;
+  }
 }
 
 /* For screens 480px and smaller (very small mobile devices) */
 @media (max-width: 480px) {
-    .content-wrapper {
-        padding: 30px 15px;
-    }
-    header {
-        padding: 20px 10px;
-        margin-bottom: 25px;
-    }
-    header h1 {
-        font-size: 2em;
-    }
-    nav ul {
-        gap: 15px;
-    }
-    nav a {
-        padding: 8px 15px;
-        font-size: 0.85em;
-    }
-    .home-title h1 {
-        font-size: 2.2em;
-        margin-bottom: 15px;
-    }
-    .home-title h2 {
-        font-size: 1.5em;
-        margin-bottom: 25px;
-    }
-    .home-portfolio-piece {
-        margin: 0 10px;
-        max-width: 95%;
-    }
-    .home-portfolio-piece img {
-        height: 180px;
-    }
-    .home-portfolio-piece h4 {
-        font-size: 1.4em;
-        padding: 18px;
-    }
-    .home-portfolio-piece .project-description,
-    .home-portfolio-piece p {
-        font-size: 1em;
-        padding: 0 18px 18px;
-    }
-    .project-link {
-        padding: 15px 18px;
-        font-size: 0.8em;
-    }
-    .skills-header, #contact h3 {
-        font-size: 1.8em;
-    }
-    #skills h4 {
-        font-size: 1.2em;
-    }
-    .skill, .tool {
-        padding: 10px 15px;
-        font-size: 0.9em;
-        gap: 10px;
-    }
-    #about img {
-        width: 180px;
-        height: 180px;
-    }
+  .content-wrapper {
+    padding: 30px 15px;
+  }
+  header {
+    padding: 20px 10px;
+    margin-bottom: 25px;
+  }
+  header h1 {
+    font-size: 2em;
+  }
+  nav ul {
+    gap: 15px;
+  }
+  nav a {
+    padding: 8px 15px;
+    font-size: 0.85em;
+  }
+  .home-title h1 {
+    font-size: 2.2em;
+    margin-bottom: 15px;
+  }
+  .home-title h2 {
+    font-size: 1.5em;
+    margin-bottom: 25px;
+  }
+  .portfolio-wrapper {
+    margin: 0 auto; /* Centered on very small screens */
+    max-width: 95%;
+  }
+  .home-portfolio-piece img {
+    height: 180px;
+  }
+  .home-portfolio-piece h4 {
+    font-size: 1.4em;
+    padding: 18px;
+  }
+  .home-portfolio-piece .project-description,
+  .home-portfolio-piece p {
+    font-size: 1em;
+    padding: 0 18px 18px;
+  }
+  .project-link {
+    padding: 15px 18px;
+    font-size: 0.8em;
+  }
+  .skills-header, #contact h3 {
+    font-size: 1.8em;
+  }
+  #skills h4 {
+    font-size: 1.2em;
+  }
+  .skill, .tool {
+    padding: 10px 15px;
+    font-size: 0.9em;
+    gap: 10px;
+  }
+  #about img {
+    width: 180px;
+    height: 180px;
+  }
+  .section-heading { /* Apply consistent font-size for very small mobile */
+    font-size: 1.8em; /* Adjusted for very small mobile */
+    margin-bottom: 25px; /* Adjust spacing */
+  }
 
-    /* Responsive adjustments for new footer structure on 480px and smaller */
-    #contact h3 {
-        font-size: 2em;
-        margin-bottom: 25px;
-    }
-    .contact-info-block,
-    .social-block {
-        padding: 20px;
-    }
-    .contact-heading {
-        font-size: 1.3em;
-        margin-bottom: 15px;
-    }
-    .contact-item {
-        font-size: 1em;
-    }
-    .social-icons a {
-        font-size: 2.2em;
-    }
-    .copyright-text {
-        font-size: 0.85em;
-    }
+  /* Responsive adjustments for new footer structure on 480px and smaller */
+  #contact h3 {
+    font-size: 2em;
+    margin-bottom: 25px;
+  }
+  .contact-info-block,
+  .social-block {
+    padding: 20px;
+  }
+  .contact-heading {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+  }
+  .contact-item {
+    font-size: 1em;
+  }
+  .social-icons a {
+    font-size: 2.2em;
+  }
+  .copyright-text {
+    font-size: 0.85em;
+  }
 }
